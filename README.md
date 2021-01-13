@@ -1,2 +1,2 @@
 # DataStructuresAlgorithms-Python3
-![](https://imgur.com/cgVJaVT)
+![](https://i.imgur.com/cgVJaVT.jpg)

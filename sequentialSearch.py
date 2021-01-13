@@ -1,3 +1,5 @@
+# Linear Search or Sequential Search Algorithm
+# Time Complexity: O(n)
 def sequential_search(arr, item):
     pos = 0
     found = False

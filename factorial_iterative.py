@@ -1,5 +1,5 @@
-# Factorial of a number
-# Time Complexity: 
+# Factorial of a number iteratively
+# Time Complexity: O(n)
 def factorial_iter(num):
     if num == 0 or num == 1: return 1
     fac = 1

@@ -15,5 +15,5 @@ def factorial_recv(num):
 try:
     n = int(input("Enter the number: "))
     print(factorial_recv(n))
-except:
-    print("Not Supported!")
+except Exception as e:
+    print(f"{e}  \nNot Supported!")

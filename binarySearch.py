@@ -5,7 +5,7 @@ def binary_search(arr, item):
     end = len(arr) - 1
 
     while start <= end:
-        middle = middle = (start + end) // 2
+        middle = (start + end) // 2
 
         if item == arr[middle]:
             print(f"Item {item} found at index {middle}")

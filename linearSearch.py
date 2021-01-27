@@ -3,10 +3,13 @@
 def sequential_search(arr, item):
     pos = 0
     found = False
+
+    steps = 0
     while pos < len(arr) and not found:
+        steps = steps + 1
         if arr[pos] == item:
             found = True
-            print(f"Element found at position: {pos}")
+            print(f"Element found at position: {pos} in {steps} steps")
             break
         else:
             pos+=1
@@ -16,4 +19,4 @@ def sequential_search(arr, item):
 #element = int(input("Enter the element: "))
 #print(sequential_search(a, element))
 a = list(range(1,99999999))
-sequential_search(a,99999998)
+print(sequential_search(a,99999998))

@@ -1,7 +1,7 @@
 class Sort:
     # constructor
-    #def __init__(self,name):
-     #   self.name = name
+    def __init__(self):
+        print(self)
 
     def bubbleSort(self, arr):
         swaps = 0
@@ -20,10 +20,29 @@ class Sort:
         print(f"Steps: {i} \t Swaps: {swaps}")
         return arr
 
+    def selectionSort(self, arr):
+        # Size of Array
+        size = len(arr)
+        swaps = 0
+
+        i = 0
+        while i < size-1:
+            j = i + 1
+            while j <= size-1:
+                if arr[i] > arr[j]:
+                    # swap
+                    arr[i], arr[j] = arr[j], arr[i]
+                    swaps = swaps + 1
+
+                j = j + 1
+            i = i + 1
+        print(f"Steps: {i} \t Swaps: {swaps}")
+        return arr
+
     def myfunc():
         print(f"Hello!")
 
 obj = Sort()
 a = [2,6,9,4,8,1,5,7]
-sorted_a = obj.bubbleSort(a)
-print(f"Sorted Array is: {sorted_a}")
+print(f"Sorted Array using Bubble Sort is: {obj.bubbleSort(a)}")
+print(f"Sorted Array using Selection Sort is: {obj.selectionSort(a)}")

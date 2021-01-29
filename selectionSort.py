@@ -1,7 +1,7 @@
-# Sorting Algorithm: Bubble Sort
+# Sorting Algorithm: Selection Sort
 # Time Complexity: O(n^2) , where n is the no of elements
 # Space Complexity: O(1)
-def bubbleSort(arr):
+def selectionSort(arr):
     print(f"Unsorted Array: {arr}")
     # Size of Array
     size = len(arr)
@@ -9,21 +9,19 @@ def bubbleSort(arr):
 
     i = 0
     while i < size-1:
-        j = 0
-        while j < size-i-1:
-            if arr[j] > arr[j+1]:
-                # swap two elements
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+        j = i + 1
+        while j <= size-1:
+            if arr[i] > arr[j]:
+                # swap
+                arr[i], arr[j] = arr[j], arr[i]
                 swaps = swaps + 1
-            j=j+1
-        i=i+1
+
+            j = j + 1
+        i = i + 1
         print(f"{arr}")
-        
     print(f"Steps: {i} \t Swaps: {swaps}")
     return arr
 
-
 a = [2,6,9,4,8,1,5,7]
-#a = list(range(999999,0,-1))
-sorted_arr = bubbleSort(a)
+sorted_arr = selectionSort(a)
 print(f"Sorted Array is: {sorted_arr}")

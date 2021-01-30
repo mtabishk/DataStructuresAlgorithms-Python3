@@ -44,5 +44,7 @@ class Sort:
 
 obj = Sort()
 a = [2,6,9,4,8,1,5,7]
-print(f"Sorted Array using Bubble Sort is: {obj.bubbleSort(a)}")
-print(f"Sorted Array using Selection Sort is: {obj.selectionSort(a)}")
+print(f"Unsorted Array is: {a}")
+# a.copy() makes a copy of list a and then passes to the function. Otherwise functions overwrites the same list.
+print(f"Sorted Array using Bubble Sort is: {obj.bubbleSort(a.copy())}")
+print(f"Sorted Array using Selection Sort is: {obj.selectionSort(a.copy())}")

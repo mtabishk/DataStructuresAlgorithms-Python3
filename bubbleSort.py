@@ -18,12 +18,12 @@ def bubbleSort(arr):
             j=j+1
         i=i+1
         print(f"{arr}")
-        
+
     print(f"Steps: {i} \t Swaps: {swaps}")
     return arr
 
 
-a = [2,6,9,4,8,1,5,7]
-#a = list(range(999999,0,-1))
+a = [1,2,3,8,2,7,7,9,0]
+#a = list(range(999999,,0,-1))
 sorted_arr = bubbleSort(a)
 print(f"Sorted Array is: {sorted_arr}")

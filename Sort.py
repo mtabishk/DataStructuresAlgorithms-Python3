@@ -3,7 +3,8 @@ class Sort:
     def __init__(self):
         print(self)
 
-    def bubbleSort(self, arr):
+    @staticmethod
+    def bubbleSort(arr):
         swaps = 0
         # Size of Array
         size = len(arr)
@@ -20,7 +21,8 @@ class Sort:
         print(f"Steps: {i} \t Swaps: {swaps}")
         return arr
 
-    def selectionSort(self, arr):
+    @staticmethod
+    def selectionSort(arr):
         # Size of Array
         size = len(arr)
         swaps = 0
@@ -42,9 +44,9 @@ class Sort:
     def myfunc():
         print(f"Hello!")
 
-obj = Sort()
+
 a = [2,6,9,4,8,1,5,10]
 print(f"Unsorted Array is: {a}")
 # a.copy() makes a copy of list a and then passes to the function. Otherwise functions overwrites the same list.
-print(f"Sorted Array using Bubble Sort is: {obj.bubbleSort(a.copy())}")
-print(f"Sorted Array using Selection Sort is: {obj.selectionSort(a.copy())}")
+print(f"Sorted Array using Bubble Sort is: {Sort.bubbleSort(a.copy())}")
+print(f"Sorted Array using Selection Sort is: {Sort.selectionSort(a.copy())}")

@@ -5,6 +5,11 @@ class Sort:
 
     @staticmethod
     def bubbleSort(data):
+        '''
+        Sorting Algorithm: Bubble Sort
+        Time Complexity: O(n^2) , where n is the no of elements
+        Space Complexity: O(1)
+        '''
         swaps = 0
         # Size of Array
         size = len(data)
@@ -23,6 +28,11 @@ class Sort:
 
     @staticmethod
     def selectionSort(data):
+        ''' 
+        Sorting Algorithm: Selection Sort
+        Time Complexity: O(n^2) , where n is the no of elements
+        Space Complexity: O(1)
+        '''
         # Size of Array
         size = len(data)
         swaps = 0

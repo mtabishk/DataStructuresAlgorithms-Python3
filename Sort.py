@@ -35,7 +35,7 @@ class Sort:
                 if data[j] < data[currentMinIndex]:
                     currentMinIndex = j
                 j = j + 1
-            # swap
+            # swap if minimum Index is updated
             if i != currentMinIndex:
                 data[i], data[currentMinIndex] = data[currentMinIndex], data[i]
                 swaps = swaps + 1

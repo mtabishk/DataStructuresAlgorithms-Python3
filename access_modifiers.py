@@ -12,17 +12,29 @@ class Student:
     def output(self):
         print(f"Parent Class:\n Name (Private) = {self.__name}\n Age (Protected) = {self._age}\n DOB (Public) = {self.dob}\n")
 
-class ChildStudent(Student):
+class ChildStudentA(Student):
         
     def __init__(self):
         Student.__init__(self)  
     
     def printChild(self):
-        #print(f"Child - Age: {self.__name}")
-        print(f"Child Class:\n Name (Private) = not accessible")
+        # Accessing Instance Variables
+        print(f"Child Class A,  Accessing Instance Variables:\n Name (Private) = not accessible")
         print(f" Age (Protected): {self._age}")
         print(f" DOB (Public): {self.dob}")
         
+
+class ChildStudentB(Student):
+        
+    def __init__(self):
+        Student.__init__(self)  
+    
+    def printChild(self):
+        # Accessing Class Variables
+        print(f"Child Class B Accessing Class Variables:\n Name (Private) = not accessible")
+        print(f" Age (Protected): {Student._age}")
+        print(f" DOB (Public): {Student.dob}")
+
 
 s1 = Student()
 s1.output()
@@ -32,5 +44,10 @@ print(f"Accessing Public Data Member from object/ instance of Student Class\n DO
 print("----------------------------------------------------------\n")
 
 
-s2 = ChildStudent()
+s2 = ChildStudentA()
 s2.printChild()
+
+print("----------------------------------------------------------\n")
+
+s3 = ChildStudentB()
+s3.printChild()

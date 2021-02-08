@@ -27,7 +27,8 @@ class ChildStudentA(Student):
 class ChildStudentB(Student):
         
     def __init__(self):
-        Student.__init__(self)  
+        #super().__init__()  # Using initializer of parent class
+        pass
     
     def printChild(self):
         # Accessing Class Variables

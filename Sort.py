@@ -62,20 +62,22 @@ class Sort:
                 '''
         # Size of Array
         size = len(arr)
-        swaps = 0
+        shifts = 0
         i = 1
         while i <= size - 1:
-            pos = i
+            key = arr[i]
+
+            # Move elements of arr[0..i-1], that are
+            # greater than key, to one position ahead
+            # of their current position
             j = i - 1
-            while j >= 0:
-                if arr[pos] < arr[j]:
-                    # swap
-                    arr[pos], arr[j] = arr[j], arr[pos]
-                    pos = j
-                    swaps = swaps + 1
+            while j >= 0 and key < arr[j]:
+                arr[j + 1] = arr[j]
                 j = j - 1
+                shifts = shifts + 1
+            arr[j + 1] = key
             i = i + 1
-        print(f"Steps: {i} \t Swaps: {swaps}")
+        print(f"Steps: {i} \t Shifts: {shifts}")
         return arr
 
     def myfunc(self):
@@ -88,4 +90,4 @@ print("++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
 # a.copy() makes a copy of list a and then passes to the function. Otherwise functions overwrites the same list.
 print(f"Sorted Array using Bubble Sort is: {Sort.bubbleSort(a.copy())}")
 print(f"Sorted Array using Selection Sort is: {Sort.selectionSort(a.copy())}\n")
-print(f"Sorted Array using Selection Sort is: {Sort.insertionSort(a.copy())}")
+print(f"Sorted Array using Insertion Sort is: {Sort.insertionSort(a.copy())}")

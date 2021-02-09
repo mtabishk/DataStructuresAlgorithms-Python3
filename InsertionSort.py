@@ -6,21 +6,23 @@ def insertionSort(arr):
     print(f"Unsorted Array: {arr}")
     # Size of Array
     size = len(arr)
-    swaps = 0
+    shifts = 0
     i = 1
     while i <= size-1:
-        temp = i
-        j = i-1
-        while j >= 0:
-            if arr[temp] < arr[j]:
-                # swap
-                arr[temp], arr[j] = arr[j], arr[temp]
-                swaps = swaps + 1
-                temp = j
+        key = arr[i]
+
+        # Move elements of arr[0..i-1], that are
+        # greater than key, to one position ahead
+        # of their current position
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
             j = j - 1
+            shifts+=1
+        arr[j + 1] = key
         i = i + 1
         print(f"{arr}")
-    print(f"Steps: {i} \t Swaps: {swaps}")
+    print(f"Steps: {i} \t Shifts: {shifts}")
     return arr
 
 a = [2,6,9,4,8,1,5,7]

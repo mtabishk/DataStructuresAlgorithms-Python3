@@ -53,7 +53,32 @@ class Sort:
         print(f"\nSteps: {i} \t Swaps: {swaps}")
         return data
 
-    def myfunc():
+    @staticmethod
+    def insertionSort(arr):
+        '''
+                Sorting Algorithm: Insertion Sort
+                Time Complexity: O(n^2) , where n is the no of elements
+                Space Complexity: O(1)
+                '''
+        # Size of Array
+        size = len(arr)
+        swaps = 0
+        i = 1
+        while i <= size - 1:
+            temp = i
+            j = i - 1
+            while j >= 0:
+                if arr[temp] < arr[j]:
+                    # swap
+                    arr[temp], arr[j] = arr[j], arr[temp]
+                    swaps = swaps + 1
+                    temp = j
+                j = j - 1
+            i = i + 1
+        print(f"Steps: {i} \t Swaps: {swaps}")
+        return arr
+
+    def myfunc(self):
         print(f"Hello!")
 
 
@@ -62,4 +87,5 @@ print(f"Unsorted Array is: {a}")
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
 # a.copy() makes a copy of list a and then passes to the function. Otherwise functions overwrites the same list.
 print(f"Sorted Array using Bubble Sort is: {Sort.bubbleSort(a.copy())}")
-print(f"Sorted Array using Selection Sort is: {Sort.selectionSort(a.copy())}")
+print(f"Sorted Array using Selection Sort is: {Sort.selectionSort(a.copy())}\n")
+print(f"Sorted Array using Selection Sort is: {Sort.insertionSort(a.copy())}")

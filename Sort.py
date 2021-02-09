@@ -65,14 +65,14 @@ class Sort:
         swaps = 0
         i = 1
         while i <= size - 1:
-            temp = i
+            pos = i
             j = i - 1
             while j >= 0:
-                if arr[temp] < arr[j]:
+                if arr[pos] < arr[j]:
                     # swap
-                    arr[temp], arr[j] = arr[j], arr[temp]
+                    arr[pos], arr[j] = arr[j], arr[pos]
+                    pos = j
                     swaps = swaps + 1
-                    temp = j
                 j = j - 1
             i = i + 1
         print(f"Steps: {i} \t Swaps: {swaps}")

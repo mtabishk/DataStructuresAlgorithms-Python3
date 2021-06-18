@@ -28,6 +28,24 @@ class Graph:
     def count_users(self):
         return len(self.gdict)
     
-    # return all users
+    # return all users -- traversal
     def show_users(self):
         return self.gdict.keys()
+   
+    # BFS Traversal
+    def BFSTraversal(self, node):
+        queue = [node]
+        visited = [node]
+        while queue:
+            # pop element at 0th index
+            dVertex = queue.pop(0)
+            print(dVertex, end="")
+            print("\tConnections:", len(self.gdict[dVertex]))
+            for aVertex in self.gdict[dVertex]:
+                # push adjacent nodes in the queue if it is not visited
+                if aVertex not in visited:
+                    queue.append(aVertex)
+                    # make as visited
+                    visited.append(aVertex)
+                
+        

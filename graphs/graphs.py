@@ -45,7 +45,25 @@ class Graph:
                 # push adjacent nodes in the queue if it is not visited
                 if aVertex not in visited:
                     queue.append(aVertex)
-                    # make as visited
+                    # mark as visited
                     visited.append(aVertex)
+                  
+     # DFS Traversal
+    def DFSTraversal(self, node):
+        stack = [node]
+        visited = [node]
+        while stack:
+            # pop element at top/ last index
+            popVertex = stack.pop()
+            print(popVertex, end="")
+            print("\tConnections:", len(self.gdict[popVertex]))
+            for aVertex in self.gdict[popVertex]:
+                # push adjacent nodes in the stack if it is not visited
+                if aVertex not in visited:
+                    stack.append(aVertex)
+                    # mark as visited
+                    visited.append(aVertex)
+        
+    
                 
         
